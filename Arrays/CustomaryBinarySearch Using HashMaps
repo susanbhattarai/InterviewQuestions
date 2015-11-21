@@ -1,0 +1,15 @@
+def Occurences(alist, number):
+    #Create a dictionary where the key is a number and value is a list of index of occurences
+    d1 = {}
+    for i in range(len(alist)):
+        if alist[i] in d1:
+            d1[alist[i]].append(i)
+        else:
+            d1[alist[i]] = [i]
+    if number in d1:
+        return (d1[number][0], d1[number][-1])
+    return -1
+
+
+print Occurences([0,1,2,3,4,5,6,6,6,7,8,9,10,11,12,13,14], 14) #(16,16)
+print Occurences([0,1,2,3,4,5,6,6,6,7,8,9,10,11,12,13,14], 6) #(6,8)
